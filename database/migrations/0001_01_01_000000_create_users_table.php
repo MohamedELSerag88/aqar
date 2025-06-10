@@ -22,9 +22,12 @@ return new class extends Migration
             $table->string('otp_token')->nullable();
             $table->string('reset_password')->nullable();
             $table->dateTime('otp_sent_at')->nullable();
+            $table->text('bio')->nullable();
+            $table->unsignedBigInteger('type_id')->nullable()->references('id')->on('user_types');
             $table->rememberToken();
             $table->timestamps();
         });
+
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();

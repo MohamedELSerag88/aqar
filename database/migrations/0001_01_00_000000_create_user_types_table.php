@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('user_types', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
-        Schema::create('category_translation', function (Blueprint $table) {
+        Schema::create('user_type_translation', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('locale');
-            $table->unsignedBigInteger('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('user_type_id')->references('id')->on('user_types');
             $table->timestamps();
         });
     }
@@ -29,7 +29,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
-        Schema::dropIfExists('category_translation');
+        Schema::dropIfExists('user_types');
+        Schema::dropIfExists('user_type_translation');
     }
 };

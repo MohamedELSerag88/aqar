@@ -15,4 +15,5 @@ return [
     'sms_sent_with_otp' => 'SMS Sent with otp',
     'profile_updated_successfully' => 'Profile updated successfully.',
     'phone_or_otp_is_wrong' => 'Phone or otp is wrong!',
+    'data_updated_successfully' => 'Data updated successfully'
  ];

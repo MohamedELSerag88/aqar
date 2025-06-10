@@ -14,13 +14,6 @@ use Twilio\Rest\Client;
 class CheckOtpController extends Controller {
 
 
-    /**
-     * @param CehckOtpRequest $request
-     * data [ md5_string , otp_token]
-     * @return JsonResponse|void
-     */
-
-
     public function checkOtp(CheckOtpRequest $request)
     {
         $data = $request->only(['md5_string', 'otp_token']);

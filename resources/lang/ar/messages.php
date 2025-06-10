@@ -13,6 +13,7 @@
          'otp_token' => 'رمز التحقق',
          'sms_sent_with_otp' => 'تم إرسال الرسالة النصية مع رمز التحقق',
          'profile_updated_successfully' => 'تم تحديث الملف الشخصي بنجاح',
-        'phone_or_otp_is_wrong' => 'رقم الهاتف او رمز التحقق خطأ'
+         'phone_or_otp_is_wrong' => 'رقم الهاتف او رمز التحقق خطأ',
+         'data_updated_successfully' => 'تم تحديث البيانات بنجاح'
 
  ];

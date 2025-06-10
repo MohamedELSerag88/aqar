@@ -21,19 +21,5 @@ class SendOtpController extends Controller {
 
     }
 
-    public function sendSmsOtp($user){
-        try{
-            $otp_token = rand(pow(10, 3), pow(10, 4)-1);
-            $user->otp_token = $otp_token;
-            $user->otp_sent_at = Carbon::now();
-            $user->save();
-            return $this->response->statusOk(["message" => trans('messages.sms_sent_with_otp'),"token"=>$otp_token]);
-        }
-        catch (\Exception $exception){
-            return $this->response->statusFail($exception->getMessage(), 500);
-        }
-
-    }
-
 
 }

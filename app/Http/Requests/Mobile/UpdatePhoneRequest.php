@@ -4,9 +4,8 @@ namespace App\Http\Requests\Mobile;
 
 use App\Http\Requests\ResponseShape as FormRequest;
 
-class UpdateProfileRequest extends FormRequest
+class UpdatePhoneRequest extends FormRequest
 {
-
 
     /**
      * Get the validation rules that apply to the request.
@@ -16,12 +15,8 @@ class UpdateProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
-            "fname" => "required",
-            "lname" => "required",
-            "email" => "required|email",
-            "bio" => "",
-            "type_id" => "required|exists:user_types,id",
+            "phone" => "required|integer|unique:users,phone," . auth('api')->id(),
+            "token" => "required",
         ];
     }
 }
