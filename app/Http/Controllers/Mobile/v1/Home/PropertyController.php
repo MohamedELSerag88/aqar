@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Mobile\v1\Home;
 
 use App\Http\Controllers\Controller;
+use App\Http\Filters\ColumnPipeline;
 use App\Http\Filters\PaginationPipeline;
+use App\Http\Filters\PricePipeline;
 use App\Http\Filters\RelationPipeline;
+use App\Http\Filters\SortPipeline;
 use App\Http\Resources\Mobile\PropertyResource;
 use App\Models\Property;
 use Illuminate\Pipeline\Pipeline;
@@ -19,12 +22,14 @@ class PropertyController extends Controller {
             ->through([
                 PaginationPipeline::class,
                 RelationPipeline::class,
+                PricePipeline::class,
+                ColumnPipeline::class,
+                SortPipeline::class,
             ])
             ->thenReturn();
         $data = PropertyResource::collection($items);
         $data = $this->getPaginatedResponse($items, $data);
         return $this->response->statusOk($data);
-        return $this->response->statusOk(['data' => PropertyResource::collection($items)]);
     }
 
 

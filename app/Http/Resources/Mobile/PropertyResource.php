@@ -23,6 +23,8 @@ class PropertyResource extends JsonResource
             "halls" => $this->halls ,
             "bedrooms" => $this->bedrooms ,
             "bathrooms" => $this->bathrooms ,
+            "age" => $this->age ,
+            "furnished" =>$this->furnished,
             "images" => MediaResource::collection($this->photos)
         ];
     }

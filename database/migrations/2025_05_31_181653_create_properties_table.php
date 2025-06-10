@@ -16,13 +16,16 @@ return new class extends Migration
             $table->decimal('price', 12, 2);
             //Details
             $table->float('area');
-            $table->string('age')->default('جديد');
+            $table->integer('age')->default(1);
             $table->integer('street_width')->nullable();
             $table->integer('bathrooms');
+            $table->integer('floors')->nullable();
+            $table->boolean('furnished')->default(false);
             $table->integer('halls')->default(1);
             $table->integer('apartments')->default(1);
             $table->integer('bedrooms');
             $table->string('purpose');
+            $table->string('rent_type')->nullable();
             $table->unsignedBigInteger('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('district_id')->references('id')->on('districts');
             $table->unsignedBigInteger('user_id')->references('id')->on('users');

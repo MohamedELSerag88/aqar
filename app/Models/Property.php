@@ -26,9 +26,22 @@ class Property extends Model
         'user_id',
         'district_id',
         'location',
+        'floors',
+        'furnished',
+        'rent_type'
     ];
     protected $casts = [
         'location' => 'array',
+    ];
+
+    public $filterColumns =[
+        'floors',
+        'bathrooms',
+        'halls',
+        'bedrooms',
+        'age',
+        'furnished',
+        'rent_type'
     ];
 
     public $translatedAttributes = ['title','description'];

@@ -19,6 +19,7 @@ class PropertyFactory extends Factory
      */
     public function definition(): array
     {
+        $rentOptions = ['month', 'year', null];
         return [
             'title:en' => $this->faker->sentence(3),
             'description:en'  => $this->faker->paragraph(),
@@ -26,7 +27,10 @@ class PropertyFactory extends Factory
             'description:ar' => $this->faker->paragraph(),
             'price' => $this->faker->randomFloat(2, 100000, 2000000),
             'area' => $this->faker->randomFloat(2, 100, 1000),
-            'age' => 'جديد',
+            'age' =>rand(1,30),
+            'floors' => rand(1,10),
+            'furnished' => rand(0, 1),
+            'rent_type' => $rentOptions[array_rand($rentOptions)],
             'street_width' => $this->faker->numberBetween(5, 30),
             'bathrooms' => $this->faker->numberBetween(1, 5),
             'halls' => $this->faker->numberBetween(1, 3),
