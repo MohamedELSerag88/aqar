@@ -25,13 +25,13 @@ class Property extends Model
         'category_id',
         'user_id',
         'district_id',
-        'location',
+        'latitude',
+        'longitude',
         'floors',
         'furnished',
         'rent_type'
     ];
     protected $casts = [
-        'location' => 'array',
     ];
 
     public $filterColumns =[

@@ -39,6 +39,7 @@ Route::group([
         Route::post('update-password', 'Profile\ProfileController@updatePassword');
         Route::post('change-phone', 'Profile\ProfileController@changePhone');
         Route::post('update-phone', 'Profile\ProfileController@updatePhone');
+        Route::get('properties-map', 'Home\PropertyController@mapIndex');
     });
 
 });

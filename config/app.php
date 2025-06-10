@@ -125,4 +125,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'radius' => env('APP_RADIUS', 10),
+
 ];

@@ -29,7 +29,8 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('district_id')->references('id')->on('districts');
             $table->unsignedBigInteger('user_id')->references('id')->on('users');
-            $table->json('location')->nullable();
+            $table->decimal('latitude', 10, 8)->nullable();
+            $table->decimal('longitude', 11, 8)->nullable();
 
             $table->timestamps();
         });

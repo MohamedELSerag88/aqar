@@ -40,10 +40,8 @@ class PropertyFactory extends Factory
             'category_id' => Category::inRandomOrder()->first()?->id ?? Category::factory(),
             'district_id' => District::inRandomOrder()->first()?->id ?? District::factory(),
             'user_id' => User::inRandomOrder()->first()?->id ?? User::factory(),
-            'location' => json_encode([
-                'lat' => $this->faker->latitude(),
-                'lng' => $this->faker->longitude(),
-            ]),
+            'latitude' => $this->faker->latitude(),
+            'longitude' => $this->faker->longitude(),
         ];
     }
 }
